@@ -1,8 +1,7 @@
 SELECT
-	ProductKey AS 'ID',
-	ProductName AS	'Nome',
-	UnitPrice AS 'Preço'
+	*
 FROM
-	DimProduct
-WHERE ProductDescription LIKE '%LCD%'
-
+	DimStore
+-- WHERE EmployeeCount BETWEEN 1 AND 20
+-- WHERE EmployeeCount BETWEEN 21 AND 50
+WHERE EmployeeCount > 50
