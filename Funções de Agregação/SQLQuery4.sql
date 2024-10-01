@@ -1,28 +1,28 @@
-SELECT	-- A
+SELECT	
 	COUNT(FirstName)
 FROM
 	DimEmployee
 WHERE Gender = 'M'
 
+----------
 
--- B Funcionario mais antigo
 SELECT
 	TOP (1)
 	FirstName AS 'Nome',
 	EmailAddress AS 'Email',
-	HireDate AS 'Data de contratação'
+	HireDate AS 'Data de contrataÃ§Ã£o'
 FROM
 	DimEmployee
 WHERE Gender = 'M'
 ORDER BY HireDate 
 
--- funcionaria mais antiga
+----------
 
 SELECT
 	TOP (1)
 	FirstName AS 'Nome',
 	EmailAddress AS 'Email',
-	HireDate AS 'Data de contratação'
+	HireDate AS 'Data de contrataÃ§Ã£o'
 FROM
 	DimEmployee
 WHERE Gender = 'F'
