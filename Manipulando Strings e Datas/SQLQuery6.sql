@@ -1,22 +1,11 @@
--- A
+DECLARE @data_atual DATETIME = GETDATE()
 
 SELECT
 	TOP (1)
-	SUM (SalesQuantity) AS 'Total de Compras',
-	CustomerKey AS 'ID Cliente'
-FROM	
-	FactOnlineSales
-GROUP BY CustomerKey
-ORDER BY SUM (SalesQuantity) DESC
-
-
--- B
-SELECT
-	TOP (3)
-	ProductKey AS 'ID Produto',
-	SUM (SalesQuantity) AS 'Total Vendido'
+	StoreName AS 'Loja',
+	OpenDate AS 'Data de abertura',
+	DATEDIFF (DAY, OpenDate,  @data_atual) AS 'Dias'
 FROM
-	FactOnlineSales
-WHERE CustomerKey = 19037
-GROUP BY ProductKey
-ORDER BY SUM (SalesQuantity) DESC
+	DimStore
+WHERE CloseDate IS NULL
+ORDER BY Dias DESC
