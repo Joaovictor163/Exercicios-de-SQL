@@ -1,0 +1,10 @@
+SELECT
+	TRANSLATE (StyleName, '0123456789', 'ABCDEFGHIJ') 
+FROM
+	DimProduct
+	
+
+--SELECT TRANSLATE ('SQL2024', '2024', 'CBCE')
+
+--SELECT RIGHT (StyleName, 7) FROM DimProduct
+
